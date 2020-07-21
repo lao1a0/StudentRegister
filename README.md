@@ -19,10 +19,11 @@
 
 
 #### 使用方法
-- 安装库后，python环境下运行
+- 安装**必要的库**后，python环境下运行
 
 - 说话，按空格停止
 
 - 出现“识别失败”按一下空格再次说话，按第二下空格停止
 
 - 支持图灵机器人标准版的各种功能【URL通过界面回显】
+- 一些需要自定义的设置在 [一些全局变量.py](https://github.com/thinkforanameissohard/StudentRegister/blob/master/聊天机器人/一些全局变量.py) 里面
