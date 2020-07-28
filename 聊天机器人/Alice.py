@@ -6,17 +6,17 @@
 import threading
 import time
 
-from 项目.聊天机器人.图灵机器人 import Tuling_Respond
-from 项目.聊天机器人.语音识别 import Record_To_Text
-from  项目.聊天机器人.键盘监听_录音 import *
-from 项目.聊天机器人.一些全局变量 import count
-from 项目.聊天机器人.语音合成 import Baidu_Speak
+from 项目.StudentRegister.聊天机器人.图灵机器人 import Tuling_Respond
+from 项目.StudentRegister.聊天机器人.语音合成 import Baidu_Speak
+from 项目.StudentRegister.聊天机器人.语音识别 import Record_To_Text
+from 项目.StudentRegister.聊天机器人.键盘监听_录音 import Recoder, run, check_input
 
 if __name__ == '__main__':
     t1 = threading.Thread(target=check_input, args=())  # 监听键盘
     t1.start()
     Baidu_Speak("主人好，这里是Alice")
     # try:
+    count=1
     while True:
         if run is True:
             print("{}:按空格停止说话>>".format(count))

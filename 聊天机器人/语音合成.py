@@ -6,8 +6,9 @@
 import os
 import playsound
 
-from 项目.聊天机器人.一些全局变量 import *
-from 项目.聊天机器人.获得Acc_token import get_token
+from 项目.StudentRegister.聊天机器人.获得Acc_token import get_token
+
+from 项目.StudentRegister.聊天机器人.一些全局变量 import client
 
 
 def Baidu_Speak(text):

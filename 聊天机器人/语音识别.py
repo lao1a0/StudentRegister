@@ -3,7 +3,7 @@
 @Author : laolao
 @FileName: 语音识别.py
 '''
-from 项目.聊天机器人.一些全局变量 import *
+from 项目.StudentRegister.聊天机器人.一些全局变量 import *
 
 def Get_File_Content(FilePath):
     '''
