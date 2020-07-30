@@ -5,13 +5,21 @@
 百度AI:人脸检测、人脸识别
 #### 使用方法
 - 可检测并识别人脸，查询本地的sql数据库回显用户的个人信息
-
 - 可以支持打印机，打印出个人信息
-
 - 正在开发：红外探测，量体温
+
+## 主项目——树莓派
+
+VMware安装树莓派虚拟机体验：https://blog.csdn.net/wangshuo747/article/details/88948816
+
+新手入门视频教程：https://www.bilibili.com/video/BV15E411r7PV?p=1
+
+设置中文：https://shumeipai.nxez.com/2016/03/13/how-to-make-raspberry-pi-display-chinese.html
+
 
 
 ## 副项目——聊天机器人
+
 #### 工具
 - 百度AI:语音识别，语音合成
 
