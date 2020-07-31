@@ -10,13 +10,28 @@
 
 ## 主项目——树莓派
 
+#### 学习视频
+
 VMware安装树莓派虚拟机体验：https://blog.csdn.net/wangshuo747/article/details/88948816
 
 新手入门视频教程：https://www.bilibili.com/video/BV15E411r7PV?p=1
 
 设置中文：https://shumeipai.nxez.com/2016/03/13/how-to-make-raspberry-pi-display-chinese.html
 
+#### 安装C语言编译环境
 
+- cd /tmp
+- 下载这个包：wget https://project-downloads.drogon.net/wiringpi-latest.deb
+- 安装这个包：sudo dpkg -i wiringpi-latest.deb
+- 查看安装版本：gpio -v
+
+#### 安装python2.7编译环境 
+
+###### 选择安装
+
+- sudo apt-get update
+- sudo apt-get install idle-python2.7
+- [首选项]-->[Main Menu Editor]-->[编程]-->[IDLE]
 
 ## 副项目——聊天机器人
 
