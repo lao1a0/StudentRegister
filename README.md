@@ -8,7 +8,7 @@
 - 可以支持打印机，打印出个人信息
 - 正在开发：红外探测，量体温
 
-## 主项目——树莓派
+## 主项目——树莓派（自带open-cv）
 
 #### 登录账号密码：
 
@@ -53,18 +53,20 @@ VMware安装树莓派虚拟机体验：
 
 超声波传感器的资料：
 
-	- https://pan.baidu.com/s/1zJYHwi_e2qUNd56RKsf7dw   提取码：kqjo
-	- 2020款超声波资料 https://pan.baidu.com/s/1miNGWha#list/path=%2F 
-	- 2020款超声波说明  链接：https://pan.baidu.com/s/1pMpbh7ps1uOqFeZ1y2lw0Q 提取码：ukbd
-	- 树莓派上使用HC-SR04超声波测距模块：https://shumeipai.nxez.com/2019/01/02/hc-sr04-ultrasonic-ranging-module-on-raspberry-pi.html 
-	- PS:
-		- 代码里不要有中文，Echo和Trig可以选择任意接口，这里我选择的是：18 23
-- <img src="..\Image\代码里不要有中文.jpg" alt="代码里不要有中文" style="zoom: 80%;" />
+- https://pan.baidu.com/s/1zJYHwi_e2qUNd56RKsf7dw   提取码：kqjo
+- 2020款超声波资料 https://pan.baidu.com/s/1miNGWha#list/path=%2F 
+- 2020款超声波说明链接：
+- https://pan.baidu.com/s/1pMpbh7ps1uOqFeZ1y2lw0Q 提取码：ukbd
+- 树莓派上使用HC-SR04超声波测距模块：
+- https://shumeipai.nxez.com/2019/01/02/hc-sr04-ultrasonic-ranging-module-on-raspberry-pi.html 
+- PS:
+- 代码里不要有中文，Echo和Trig可以选择任意接口，这里我选择的是：18 23
+- <img src=".\Image\代码里不要有中文.jpg" alt="代码里不要有中文" style="zoom: 80%;" />
 
 3B+引脚原理图：
 
 - https://blog.csdn.net/zz531987464/article/details/100837652
-- <img src="..\Image\20181206212711483.jpg" alt="20181206212711483" style="zoom: 80%;" />
+- <img src=".\Image\20181206212711483.jpg" alt="20181206212711483" style="zoom: 80%;" />
 
 GPIO接线图
 
