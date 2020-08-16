@@ -34,6 +34,7 @@ def distance():
 
 
 if __name__ == '__main__':
+    '''
     try:
         while True:
             dist = distance()
@@ -43,3 +44,4 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         print("Measurement stopped by User")
         GPIO.cleanup()
+    '''
