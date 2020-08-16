@@ -8,9 +8,11 @@
 - 可以支持打印机，打印出个人信息
 - 红外探测，量体温，语音交互提示测温结果
 #### 说明
-－ 拍照获得的图片保存地址：/home/pi/Pictures
-－ 数据库录入图片保存地址：/home/pi/Pictures/Face_picture/
-－ mysql数据库名：test 数据表名:user
+- 拍照获得的图片保存地址：/home/pi/Pictures
+- 数据库录入图片保存地址：/home/pi/Pictures/Face_picture/
+- mysql数据库名：test 数据表名:user
+- home/pi/Pictures/Face_local/
+- /home/pi/Pictures/map_local/
 
 ## 主项目——树莓派（自带open-cv）
 
