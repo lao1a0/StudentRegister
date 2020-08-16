@@ -11,8 +11,19 @@
 - 拍照获得的图片保存地址：/home/pi/Pictures
 - 数据库录入图片保存地址：/home/pi/Pictures/Face_picture/
 - mysql数据库名：test 数据表名:user
-- home/pi/Pictures/Face_local/
-- /home/pi/Pictures/map_local/
+- home/pi/Pictures/Face_local/  ？
+- /home/pi/Pictures/map_local/   ？
+
+数据库的字段类型：
+
+                    Second.label_3.setText(p['姓名'])
+                    Second.label_5.setText(p['学号'])
+                    Second.label_7.setText(p['班级'])
+                    Second.label_9.setText(p['学院'])
+                    Second.label_11.setText(p['宿舍'])
+                    Second.label_13.setText(p['辅导员'])
+		    
+		    B2.jpg是什么？
 
 ## 主项目——树莓派（自带open-cv）
 
