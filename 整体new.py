@@ -465,6 +465,8 @@ class Ui_SecondForm(object):
 
 
 if __name__=='__main__':
+    
+    # 个人信息识别
     app = QtWidgets.QApplication(sys.argv)
     app.setWindowIcon(QIcon("人脸识别.png"))
 
@@ -481,3 +483,6 @@ if __name__=='__main__':
     mainWindows.show()
 
     sys.exit(app.exec_())
+    
+    # 测温
+    temp = themometry()
