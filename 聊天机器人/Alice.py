@@ -6,10 +6,10 @@
 import threading
 import time
 
-from 项目.StudentRegister.聊天机器人.图灵机器人 import Tuling_Respond
-from 项目.StudentRegister.聊天机器人.语音合成 import Baidu_Speak
-from 项目.StudentRegister.聊天机器人.语音识别 import Record_To_Text
-from 项目.StudentRegister.聊天机器人.键盘监听_录音 import Recoder, run, check_input
+from 图灵机器人 import Tuling_Respond
+from 语音合成 import Baidu_Speak
+from 语音识别 import Record_To_Text
+from 键盘监听_录音 import Recoder, run, check_input
 
 if __name__ == '__main__':
     t1 = threading.Thread(target=check_input, args=())  # 监听键盘

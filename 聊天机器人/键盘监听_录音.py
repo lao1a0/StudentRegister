@@ -9,7 +9,7 @@ from pynput.keyboard import Listener
 import pyaudio
 import wave
 
-from 项目.StudentRegister.聊天机器人.一些全局变量 import WAVE_OUTPUT_FILENAME
+from 一些全局变量 import WAVE_OUTPUT_FILENAME
 
 run = True
 CHUNK = 1024  # 数据包或者数据片段

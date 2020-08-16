@@ -5,7 +5,7 @@
 '''
 import requests
 
-from 项目.StudentRegister.聊天机器人.一些全局变量 import api_key, urls, ERROR_CODE
+from 一些全局变量 import api_key, urls, ERROR_CODE
 
 prologue = "主人您好，我是Alice，爱你哦~"  # 定义开场白
 count = 1  # 用来计数输入的次数
