@@ -20,6 +20,7 @@ pi  yahboom
 - 安装pymysql:https://blog.csdn.net/register_2/article/details/79986624
 - 安装摄像头：https://blog.csdn.net/damanchen/article/details/85163229
 - 开启声音播放：https://www.nousbuild.org/codeu/raspberry-pi-audio-and-video/
+- 播放视频：https://shumeipai.nxez.com/2013/09/08/play-video-using-the-command-line.html
 
 #### 学习视频
 
