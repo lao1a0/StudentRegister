@@ -23,7 +23,7 @@
 		  File "/usr/lib/python3/dist-packages/gi/__init__.py", line 118, in require_version
 		    raise ValueError('Namespace %s not available' % namespace)
 		ValueError: Namespace Gst not available
--- 解决：sudo apt-get install gir1.2-gst-plugins-base-1.0 gir1.2-gstreamer-1.0 gstreamer1.0-tools
+- 解决：sudo apt-get install gir1.2-gst-plugins-base-1.0 gir1.2-gstreamer-1.0 gstreamer1.0-tools
 	
 数据库的字段类型：
 
