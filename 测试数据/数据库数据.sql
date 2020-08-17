@@ -20,5 +20,5 @@ insert into user values('20183523','罗恩·韦斯莱','信1823','247','格兰�
 create table teacher(
 `姓名` varchar(50),
 `UID` varchar(255)
-)
-insert into teacher values('戈德里克·格兰芬多','UID_wL85bprwzyAigwmf61FnVHWLbP1N')
+);
+insert into teacher values('戈德里克·格兰芬多','UID_wL85bprwzyAigwmf61FnVHWLbP1N');
