@@ -13,6 +13,8 @@
 - mysql数据库名：test 数据表名:user
 - home/pi/Pictures/Face_local/  ？
 - /home/pi/Pictures/map_local/   ？
+- pip3 install playsound
+- pip3 install baidu-aip
 - playsound报错：
 
 		Traceback (most recent call last):
