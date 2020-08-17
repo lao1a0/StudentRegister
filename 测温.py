@@ -19,10 +19,11 @@ def thermometry():
         dist = distance()
         # 判定距离是否在合适拍照的范围
         print("［debug］当前距离为{:.2f}cm ".format(dist))
-        if dist <= 10:
+        if dist <= 30:
             dis_cnt += 1
         else:
             dis_cnt = 0
+            Baidu_Speak("请靠近")
             print("\t\t请靠近")
         # 连续检测到三次符合距离要求，跳出循环准备开始人脸检测
         if (dis_cnt == 3):
@@ -46,7 +47,7 @@ def thermometry():
         # 温度异常
         speak = "温度异常" + str(temperature)
         tag =0
-    #Baidu_Speak(speak)
+    Baidu_Speak(speak)
     print(speak)
     return  tag
 
