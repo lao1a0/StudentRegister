@@ -11,8 +11,8 @@
 - 拍照获得的图片保存地址：/home/pi/Pictures
 - 数据库录入图片保存地址：/home/pi/Pictures/Face_picture/
 - mysql数据库名：test 数据表名:user
-- home/pi/Pictures/Face_local/  ？
-- /home/pi/Pictures/map_local/   ？
+- 头像 ：/home/pi/Pictures/Face_local/  
+- 地图 ：/home/pi/Pictures/map_local/   
 - pip3 install playsound
 - pip3 install baidu-aip
 - playsound报错：
