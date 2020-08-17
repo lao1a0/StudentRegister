@@ -26,17 +26,6 @@
 		    raise ValueError('Namespace %s not available' % namespace)
 		ValueError: Namespace Gst not available
 - 解决：sudo apt-get install gir1.2-gst-plugins-base-1.0 gir1.2-gstreamer-1.0 gstreamer1.0-tools
-	
-数据库的字段类型：
-
-                    Second.label_3.setText(p['姓名'])
-                    Second.label_5.setText(p['学号'])
-                    Second.label_7.setText(p['班级'])
-                    Second.label_9.setText(p['学院'])
-                    Second.label_11.setText(p['宿舍'])
-                    Second.label_13.setText(p['辅导员'])
-		    
-		    B2.jpg是什么？
 
 ## 主项目——树莓派（自带open-cv）
 
@@ -55,6 +44,7 @@ root 123
 - 开启声音播放：https://www.nousbuild.org/codeu/raspberry-pi-audio-and-video/
 - 播放视频：https://shumeipai.nxez.com/2013/09/08/play-video-using-the-command-line.html
 - 安装mysql:https://www.jianshu.com/p/b258c5e2335b
+- 卸载mysql:https://blog.csdn.net/weixin_44023300/article/details/89811816
 
 #### 学习视频
 
