@@ -41,14 +41,16 @@ class MLX90614():
     def getObjTemp(self):
         data = self.readRegister(self.MLX90614_Tobj1)
         res=round(self.toCelsius(data),2)
-        print("ObjTemp = "+str(res))
+        print("[debug]物体当前温度 = "+str(res))
         return res
 
 
 if __name__ == "__main__":
-    # sensor = MLX90614()
-    # while True:
-    #     print("Self: %.2f"%(sensor.getSelfTemp()))
-    #     print("Object: %.2f"%(sensor.getObjTemp()))
-    #     sleep(1)
-    pass
+    '''
+    sensor = MLX90614()
+    while True:
+        print("Self: %.2f"%(sensor.getSelfTemp()))
+        print("Object: %.2f"%(sensor.getObjTemp()))
+        sleep(1)
+    '''
+

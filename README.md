@@ -7,13 +7,37 @@
 - 可检测并识别人脸，查询本地的sql数据库回显用户的个人信息
 - 可以支持打印机，打印出个人信息
 - 红外探测，量体温，语音交互提示测温结果
+#### 说明
+- 拍照获得的图片保存地址：/home/pi/Pictures
+- 数据库录入图片保存地址：/home/pi/Pictures/Face_picture/
+- mysql数据库名：test 数据表名:user
+- home/pi/Pictures/Face_local/  ？
+- /home/pi/Pictures/map_local/   ？
 
+数据库的字段类型：
+
+                    Second.label_3.setText(p['姓名'])
+                    Second.label_5.setText(p['学号'])
+                    Second.label_7.setText(p['班级'])
+                    Second.label_9.setText(p['学院'])
+                    Second.label_11.setText(p['宿舍'])
+                    Second.label_13.setText(p['辅导员'])
+		    
+		    B2.jpg是什么？
 
 ## 主项目——树莓派（自带open-cv）
 
 #### 登录账号密码：
 
 pi  yahboom
+
+#### raspberry部署
+- 安装pyqt5:https://blog.csdn.net/lcy1847/article/details/87860046
+- 安装pymysql:https://blog.csdn.net/register_2/article/details/79986624
+- 安装摄像头：https://blog.csdn.net/damanchen/article/details/85163229
+- 开启声音播放：https://www.nousbuild.org/codeu/raspberry-pi-audio-and-video/
+- 播放视频：https://shumeipai.nxez.com/2013/09/08/play-video-using-the-command-line.html
+- 安装mysql:https://www.jianshu.com/p/b258c5e2335b
 
 #### 学习视频
 
