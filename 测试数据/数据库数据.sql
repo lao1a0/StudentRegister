@@ -1,11 +1,11 @@
 create database test;
 create table user(
 `学号` varchar(50) primary key,
-`姓名` varchar(50),
-`班级` varchar(50),
-`宿舍` varchar(50),
-`学院` varchar(50),
-`辅导员` varchar(50)
+`姓名` varchar(255),
+`班级` varchar(255),
+`宿舍` varchar(255),
+`学院` varchar(255),
+`辅导员` varchar(255)
 );
 insert into user values('20183614','卢修斯·马尔福','信1803','207','斯莱特林学院','萨拉查·斯莱特林');
 insert into user values('20183613','西弗勒斯·斯内普','信1603','407','斯莱特林学院','萨拉查·斯莱特林');
