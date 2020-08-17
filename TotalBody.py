@@ -489,7 +489,7 @@ class Ui_SecondForm(object):
 if __name__=='__main__':
     # 人脸识别
     app = QtWidgets.QApplication(sys.argv)
-    app.setWindowIcon(QIcon("face.png"))
+    app.setWindowIcon(QIcon("人脸识别.png"))
 
     mainWindows = QMainWindow()
     mainWindows2 = QMainWindow()
