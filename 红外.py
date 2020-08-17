@@ -46,8 +46,9 @@ class MLX90614():
 
 
 if __name__ == "__main__":
-    sensor = MLX90614()
-    while True:
-        print("Self: %.2f"%(sensor.getSelfTemp()))
-        print("Object: %.2f"%(sensor.getObjTemp()))
-        sleep(1)
+    # sensor = MLX90614()
+    # while True:
+    #     print("Self: %.2f"%(sensor.getSelfTemp()))
+    #     print("Object: %.2f"%(sensor.getObjTemp()))
+    #     sleep(1)
+    pass

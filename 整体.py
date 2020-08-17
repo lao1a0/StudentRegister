@@ -19,7 +19,7 @@ import datetime
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 
-from 测温 import thermometry
+# from 测温 import thermometry
 
 
 class Ui_FirstForm(object):
@@ -484,6 +484,6 @@ if __name__=='__main__':
     mainWindows.show()
 
     # 测温
-    thermometry()
+    # thermometry()
     sys.exit(app.exec_())
 

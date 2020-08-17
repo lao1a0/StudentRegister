@@ -13,9 +13,9 @@ def thermometry():
     sensor = MLX90614()
 
     while (1):
-        distance = distance()
+        dist = distance()
         # 判定距离是否在合适拍照的范围
-        if distance > 10:
+        if dist > 10:
             dis_cnt += 1
         else:
             dis_cnt = 0
@@ -46,4 +46,8 @@ def thermometry():
     return  tag
 
 if __name__ == '__main__':
-    thermometry()
+    try:
+        thermometry()
+    except KeyboardInterrupt:
+        print("Measurement stopped by User")
+        GPIO.cleanup()

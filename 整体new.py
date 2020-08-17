@@ -485,4 +485,4 @@ if __name__=='__main__':
     sys.exit(app.exec_())
     
     # 测温
-    temp = themometry()
+    # temp = themometry()
