@@ -44,6 +44,10 @@
 
 pi  yahboom
 
+#### mysql账号密码：
+
+root 123
+
 #### raspberry部署
 - 安装pyqt5:https://blog.csdn.net/lcy1847/article/details/87860046
 - 安装pymysql:https://blog.csdn.net/register_2/article/details/79986624
