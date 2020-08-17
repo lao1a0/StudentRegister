@@ -14,6 +14,7 @@
 - home/pi/Pictures/Face_local/  ？
 - /home/pi/Pictures/map_local/   ？
 - playsound报错：
+
 		Traceback (most recent call last):
 		  File "/home/pi/Desktop/1.py", line 3, in <module>
 		    playsound.playsound('/home/pi/Desktop/Jam - 七月上.mp3')
