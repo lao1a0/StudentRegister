@@ -156,7 +156,7 @@ class Ui_FirstForm(object):
     def Get_Uid(self,name):
         conn = pymysql.connect(host='localhost', port=3306, user='root', password='123', db='test')
         cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
-        cursor.execute("SELECT * FROM teacher WHERE 姓名={}".format(name))
+        cursor.execute("SELECT * FROM teacher WHERE 姓名='{}'".format(name))
         p = cursor.fetchone()
         uid = p['UID']
         conn.commit()
@@ -301,17 +301,6 @@ class Ui_SecondForm(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         
-        # 重新扫描
-        self.pushButton = QtWidgets.QPushButton(Form)
-        self.pushButton.setGeometry(QtCore.QRect(270, 760, 212, 51))
-        font = QtGui.QFont()
-        font.setFamily("宋体")
-        font.setPointSize(15)
-        font.setBold(True)
-        font.setWeight(75)
-        self.pushButton.setFont(font)
-        self.pushButton.setObjectName("pushButton")
-        
         self.layoutWidget = QtWidgets.QWidget(Form)
         self.layoutWidget.setGeometry(QtCore.QRect(160, 380, 351, 311))
         self.layoutWidget.setObjectName("layoutWidget")
@@ -437,9 +426,20 @@ class Ui_SecondForm(object):
         self.label_13.setObjectName("label_13")
         self.gridLayout.addWidget(self.label_13, 5, 1, 1, 1)
         
+        # 重新扫描
+        self.pushButton = QtWidgets.QPushButton(Form)
+        self.pushButton.setGeometry(QtCore.QRect(1000, 380, 169, 40))
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(15)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton.setFont(font)
+        self.pushButton.setObjectName("pushButton")
+        
         # 打印个人信息
         self.pushButton_2 = QtWidgets.QPushButton(Form)
-        self.pushButton_2.setGeometry(QtCore.QRect(840, 760, 212, 51))
+        self.pushButton_2.setGeometry(QtCore.QRect(1000, 440, 169, 40))
         font = QtGui.QFont()
         font.setFamily("宋体")
         font.setPointSize(15)
@@ -450,7 +450,7 @@ class Ui_SecondForm(object):
         
         # 测温
         self.pushButton_3 = QtWidgets.QPushButton(Form)
-        self.pushButton_3.setGeometry(QtCore.QRect(840, 760, 212, 51))
+        self.pushButton_3.setGeometry(QtCore.QRect(1000, 500, 169, 40))
         font = QtGui.QFont()
         font.setFamily("宋体")
         font.setPointSize(15)
@@ -461,7 +461,7 @@ class Ui_SecondForm(object):
         
         # 打印表格
         self.pushButton_4 = QtWidgets.QPushButton(Form)
-        self.pushButton_4.setGeometry(QtCore.QRect(840, 760, 212, 51))
+        self.pushButton_4.setGeometry(QtCore.QRect(1000, 560, 169, 40))
         font = QtGui.QFont()
         font.setFamily("宋体")
         font.setPointSize(15)
@@ -526,7 +526,10 @@ class Ui_SecondForm(object):
         self.pushButton_2.setText(_translate("Form", "打印信息"))
         self.label_14.setText(_translate("Form", "1"))
         self.label_15.setText(_translate("Form", "您的信息如下"))
-
+        
+        self.pushButton_2.setText(_translate("Form", "打印信息"))
+        self.pushButton_3.setText(_translate("Form", "测    温"))
+        self.pushButton_4.setText(_translate("Form", "打印表格"))
     # 关闭窗口，返回原窗口
     def shut(self):
         mainWindows2.close()
