@@ -22,8 +22,9 @@ from 语音合成 import *
 
 from 测温 import thermometry
 
-
+UserNumber=""
 class Ui_FirstForm(object):
+    
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1069, 767)
@@ -154,15 +155,10 @@ class Ui_FirstForm(object):
 
     # 利用WxPusher公众号发送信息
     def Get_Uid(self,name):
-        conn = pymysql.connect(host='localhost', port=3306, user='root', password='123', db='test')
-        cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
-        cursor.execute("SELECT * FROM teacher WHERE 姓名='{}'".format(name))
-        p = cursor.fetchone()
+        p = self.use_mysql("SELECT * FROM teacher WHERE 姓名='{}'".format(name))
         uid = p['UID']
-        conn.commit()
-        cursor.close()
-        conn.close()
         return uid
+        
     def message_send(self, s_name,t_name):
         now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         url = 'http://wxpusher.zjiecode.com/api/send/message'
@@ -212,11 +208,11 @@ class Ui_FirstForm(object):
         self.cap.release()  # 释放视频流
         self.show_camera.clear()  # 清空视频显示区域
 
-    def use_mysql(self, number):
+    def use_mysql(self, sql):
         # 使用MySQL数据库
         conn = pymysql.connect(host='localhost', port=3306, user='root', password='123', db='test')
         cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
-        cursor.execute("SELECT * FROM user WHERE 学号 ={}".format(number))
+        cursor.execute(sql)
         p = cursor.fetchone()
 
         conn.commit()
@@ -226,6 +222,7 @@ class Ui_FirstForm(object):
         return p
 
     def recognition(self):
+        global UserNumber
         flag, self.image = self.cap.read()  # 从视频流中读取
         num = 1
 
@@ -269,7 +266,7 @@ class Ui_FirstForm(object):
                     Second.label_14.setScaledContents(True)  # 让图片自适应label大小
 
 
-                    p = self.use_mysql(number)
+                    p = self.use_mysql("SELECT * FROM user WHERE 学号 ={}".format(number))
 
                     Second.label_3.setText(p['姓名'])
                     Second.label_5.setText(p['学号'])
@@ -279,35 +276,39 @@ class Ui_FirstForm(object):
                     Second.label_13.setText(p['辅导员'])
 
                     self.message_send(p['姓名'],p['辅导员'])
-
+                    UserNumber=p['学号']
                     mainWindows2.show()
         else:
             print("未正确调用百度云api,请检查相关代码!")
 
 
 class Ui_SecondForm(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(1324, 873)
-
-
+    global UserNumber
+    def Set_Background(self,Form,image):
         # 设置窗口背景
         palette = QPalette()
-        palette.setBrush(QPalette.Background, QBrush(QPixmap("B2.jpg")))
+        palette.setBrush(QPalette.Background, QBrush(QPixmap(image)))
         Form.setPalette(palette)
+        
+    def setupUi(self, Form):
+        Form.setObjectName("Form")
+        Form.resize(800, 640)
 
+        self.Set_Background(Form,"B2.jpg")
+        
+        # 照片
         self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(240, 120, 171, 201))
+        self.label.setGeometry(QtCore.QRect(80, 220, 171, 201))
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         
         self.layoutWidget = QtWidgets.QWidget(Form)
-        self.layoutWidget.setGeometry(QtCore.QRect(160, 380, 351, 311))
+        self.layoutWidget.setGeometry(QtCore.QRect(300, 180, 351, 311))
         self.layoutWidget.setObjectName("layoutWidget")
         
         self.gridLayout = QtWidgets.QGridLayout(self.layoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout.setVerticalSpacing(12)
+        self.gridLayout.setVerticalSpacing(10)
         self.gridLayout.setObjectName("gridLayout")
         
         # 【学院】
@@ -426,9 +427,34 @@ class Ui_SecondForm(object):
         self.label_13.setObjectName("label_13")
         self.gridLayout.addWidget(self.label_13, 5, 1, 1, 1)
         
+         # 1
+        self.label_14 = QtWidgets.QLabel(Form)
+        self.label_14.setGeometry(QtCore.QRect(620, 150, 631, 511))
+        self.label_14.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_14.setObjectName("label_14")
+        
+         # 显示温度
+        self.label_16 = QtWidgets.QLabel(Form)
+        self.label_16.setGeometry(QtCore.QRect(250, 120, 361, 51))
+        self.label_16.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_16.setObjectName("label_14")
+        
+        # 您的信息如下
+        self.label_15 = QtWidgets.QLabel(Form)
+        self.label_15.setGeometry(QtCore.QRect(250, 30, 361, 51))
+        font = QtGui.QFont()
+        font.setFamily("楷体")
+        font.setPointSize(21)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.label_15.setFont(font)
+        self.label_15.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_15.setObjectName("label_15")
+        
         # 重新扫描
         self.pushButton = QtWidgets.QPushButton(Form)
-        self.pushButton.setGeometry(QtCore.QRect(1000, 380, 169, 40))
+        self.pushButton.setGeometry(QtCore.QRect(20, 520, 169, 40))
         font = QtGui.QFont()
         font.setFamily("宋体")
         font.setPointSize(15)
@@ -439,7 +465,7 @@ class Ui_SecondForm(object):
         
         # 打印个人信息
         self.pushButton_2 = QtWidgets.QPushButton(Form)
-        self.pushButton_2.setGeometry(QtCore.QRect(1000, 440, 169, 40))
+        self.pushButton_2.setGeometry(QtCore.QRect(220, 520, 169, 40))
         font = QtGui.QFont()
         font.setFamily("宋体")
         font.setPointSize(15)
@@ -450,7 +476,7 @@ class Ui_SecondForm(object):
         
         # 测温
         self.pushButton_3 = QtWidgets.QPushButton(Form)
-        self.pushButton_3.setGeometry(QtCore.QRect(1000, 500, 169, 40))
+        self.pushButton_3.setGeometry(QtCore.QRect(420, 520, 169, 40))
         font = QtGui.QFont()
         font.setFamily("宋体")
         font.setPointSize(15)
@@ -461,7 +487,7 @@ class Ui_SecondForm(object):
         
         # 打印表格
         self.pushButton_4 = QtWidgets.QPushButton(Form)
-        self.pushButton_4.setGeometry(QtCore.QRect(1000, 560, 169, 40))
+        self.pushButton_4.setGeometry(QtCore.QRect(620, 520, 169, 40))
         font = QtGui.QFont()
         font.setFamily("宋体")
         font.setPointSize(15)
@@ -470,88 +496,94 @@ class Ui_SecondForm(object):
         self.pushButton_4.setFont(font)
         self.pushButton_4.setObjectName("pushButton_4")
         
-        # 1
-        self.label_14 = QtWidgets.QLabel(Form)
-        self.label_14.setGeometry(QtCore.QRect(620, 150, 631, 511))
-        self.label_14.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_14.setObjectName("label_14")
-        
-        # 您的信息如下
-        self.label_15 = QtWidgets.QLabel(Form)
-        self.label_15.setGeometry(QtCore.QRect(510, 30, 361, 51))
-        font = QtGui.QFont()
-        font.setFamily("楷体")
-        font.setPointSize(21)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(75)
-        self.label_15.setFont(font)
-        self.label_15.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_15.setObjectName("label_15")
-
+        print("13")
         # 将信号与槽绑定
         self.pushButton.clicked.connect(self.shut)
-        self.pushButton_2.clicked.connect(self.Print)
+        self.pushButton_2.clicked.connect(lambda:self.Print(Form))
         self.pushButton_3.clicked.connect(self.GetTemperature)
         self.pushButton_4.clicked.connect(self.Print_Table)     
         
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
     
-    def  Print_Table(self):
+    def Print_Table(self):
         #打印结果表
+        print("打印结果表")
         pass
 
     def GetTemperature(self):
-         # 测温
-        return thermometry()
+        global UserNumber
+        # 测温
+        try:
+            t = thermometry()
+            font = QtGui.QFont()
+            font.setFamily("微软雅黑")
+            font.setPointSize(15)
+            self.label_16.setFont(font)
+            if t>30 and t<37.2:
+                self.label_16.setText("<font color='green'>当前体温："+str(t)+"</font>")
+            else:
+                self.label_16.setText("<font color='red'>当前体温："+str(t)+"</font>") 
+            # 体温写入数据库
+            print("update user set 体温={} where 学号={}".format(t,UserNumber))
+            p = Ui_FirstForm().use_mysql("update user set 体温={} where 学号={}".format(t,UserNumber))
+        except KeyboardInterrupt:
+            print("[Error]:GetTemperature") 
+            self.shut()
+        
     # 一些固定文字控件的标题的设定
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        # self.label.setText(_translate("Form", "TextLabel"))
+        
         self.pushButton.setText(_translate("Form", "重新扫描"))
-        # self.label_9.setText(_translate("Form", "电气与电子工程学院"))
-        # self.label_11.setText(_translate("Form", "7#502"))
         self.label_8.setText(_translate("Form", "学    院："))
-        # self.label_5.setText(_translate("Form", "20183372"))
         self.label_2.setText(_translate("Form", "姓    名："))
         self.label_6.setText(_translate("Form", "班    级："))
-        # self.label_3.setText(_translate("Form", "解佳坤"))
         self.label_10.setText(_translate("Form", "宿    舍："))
         self.label_4.setText(_translate("Form", "学    号："))
-        # self.label_7.setText(_translate("Form", "试1804"))
         self.label_12.setText(_translate("Form", "辅导员："))
-        # self.label_13.setText(_translate("Form", "庞玉印"))
         self.pushButton_2.setText(_translate("Form", "打印信息"))
         self.label_14.setText(_translate("Form", "1"))
         self.label_15.setText(_translate("Form", "您的信息如下"))
-        
         self.pushButton_2.setText(_translate("Form", "打印信息"))
         self.pushButton_3.setText(_translate("Form", "测    温"))
         self.pushButton_4.setText(_translate("Form", "打印表格"))
+        
     # 关闭窗口，返回原窗口
     def shut(self):
         mainWindows2.close()
         ui.start_camera()
         mainWindows.show()
-
+        
+    def Hide_Button(self,Tag):
+        self.pushButton.setVisible(Tag)
+        self.pushButton_2.setVisible(Tag)
+        self.pushButton_3.setVisible(Tag)
+        self.pushButton_4.setVisible(Tag)   
+        
     # 打印整个窗口
-    def Print(self):
+    def Print(self,Form):
         self.printer = QPrinter()
         # 将打印页面设置为横向
         self.printer.setOrientation(QPrinter.Landscape)
-
+        self.Set_Background(Form,"white.jpg")
+        self.Hide_Button(False)
+        
         printdialog = QPrintDialog(self.printer, mainWindows2)
+        
         if QDialog.Accepted == printdialog.exec():
             painter = QtGui.QPainter()
             # 将绘制目标重定向到打印机
             painter.begin(self.printer)
-            # screen = mainWindows2.grab(QRect(100, 80, 760, 330))
+            screen = mainWindows2.grab(QRect(100, 80, 760, 330))
+            
             screen = mainWindows2.grab()
             painter.drawPixmap(40, 60, screen)
             painter.end()
-
+            
+        self.Set_Background(Form,"B2.jpg")    
+        self.Hide_Button(True)
 
 if __name__=='__main__':
     # 人脸识别
@@ -570,6 +602,4 @@ if __name__=='__main__':
 
     mainWindows.show()
 
-   
     sys.exit(app.exec_())
-
