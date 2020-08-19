@@ -87,7 +87,7 @@ class Ui_FirstForm(object):
         self.timer_camera.timeout.connect(self.label_show_camera)             # 若定时器结束，则调用show_camera()
         self.timer_camera2.timeout.connect(self.recognition)
         # self.button_close.clicked.connect(self.close)                       # 若该按键被点击，则关闭程序
-
+    
     # 一些固定文字控件的标题的设定
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -296,11 +296,12 @@ class Ui_SecondForm(object):
         palette.setBrush(QPalette.Background, QBrush(QPixmap("B2.jpg")))
         Form.setPalette(palette)
 
-
         self.label = QtWidgets.QLabel(Form)
         self.label.setGeometry(QtCore.QRect(240, 120, 171, 201))
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
+        
+        # 重新扫描
         self.pushButton = QtWidgets.QPushButton(Form)
         self.pushButton.setGeometry(QtCore.QRect(270, 760, 212, 51))
         font = QtGui.QFont()
@@ -310,13 +311,17 @@ class Ui_SecondForm(object):
         font.setWeight(75)
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
+        
         self.layoutWidget = QtWidgets.QWidget(Form)
         self.layoutWidget.setGeometry(QtCore.QRect(160, 380, 351, 311))
         self.layoutWidget.setObjectName("layoutWidget")
+        
         self.gridLayout = QtWidgets.QGridLayout(self.layoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setVerticalSpacing(12)
         self.gridLayout.setObjectName("gridLayout")
+        
+        # 【学院】
         self.label_9 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -324,6 +329,8 @@ class Ui_SecondForm(object):
         self.label_9.setFont(font)
         self.label_9.setObjectName("label_9")
         self.gridLayout.addWidget(self.label_9, 3, 1, 1, 1)
+        
+        # 【宿舍】
         self.label_11 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -332,6 +339,8 @@ class Ui_SecondForm(object):
         self.label_11.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_11.setObjectName("label_11")
         self.gridLayout.addWidget(self.label_11, 4, 1, 1, 1)
+        
+        # 学院：
         self.label_8 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -340,6 +349,8 @@ class Ui_SecondForm(object):
         self.label_8.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_8.setObjectName("label_8")
         self.gridLayout.addWidget(self.label_8, 3, 0, 1, 1)
+        
+        # 【学号】
         self.label_5 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -347,6 +358,8 @@ class Ui_SecondForm(object):
         self.label_5.setFont(font)
         self.label_5.setObjectName("label_5")
         self.gridLayout.addWidget(self.label_5, 1, 1, 1, 1)
+        
+        # 姓名：
         self.label_2 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -355,6 +368,8 @@ class Ui_SecondForm(object):
         self.label_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_2.setObjectName("label_2")
         self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1)
+        
+        # 班级：
         self.label_6 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -363,6 +378,8 @@ class Ui_SecondForm(object):
         self.label_6.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_6.setObjectName("label_6")
         self.gridLayout.addWidget(self.label_6, 2, 0, 1, 1)
+        
+        # 【姓名】
         self.label_3 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -370,6 +387,8 @@ class Ui_SecondForm(object):
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
         self.gridLayout.addWidget(self.label_3, 0, 1, 1, 1)
+        
+        # 宿舍：
         self.label_10 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -378,6 +397,8 @@ class Ui_SecondForm(object):
         self.label_10.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_10.setObjectName("label_10")
         self.gridLayout.addWidget(self.label_10, 4, 0, 1, 1)
+        
+        # 学号：
         self.label_4 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -386,6 +407,8 @@ class Ui_SecondForm(object):
         self.label_4.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_4.setObjectName("label_4")
         self.gridLayout.addWidget(self.label_4, 1, 0, 1, 1)
+        
+        # 【班级】
         self.label_7 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -393,6 +416,8 @@ class Ui_SecondForm(object):
         self.label_7.setFont(font)
         self.label_7.setObjectName("label_7")
         self.gridLayout.addWidget(self.label_7, 2, 1, 1, 1)
+        
+        # 辅导员
         self.label_12 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -401,6 +426,8 @@ class Ui_SecondForm(object):
         self.label_12.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_12.setObjectName("label_12")
         self.gridLayout.addWidget(self.label_12, 5, 0, 1, 1)
+        
+        # 【辅导员】
         self.label_13 = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
@@ -409,6 +436,8 @@ class Ui_SecondForm(object):
         self.label_13.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_13.setObjectName("label_13")
         self.gridLayout.addWidget(self.label_13, 5, 1, 1, 1)
+        
+        # 打印个人信息
         self.pushButton_2 = QtWidgets.QPushButton(Form)
         self.pushButton_2.setGeometry(QtCore.QRect(840, 760, 212, 51))
         font = QtGui.QFont()
@@ -418,10 +447,36 @@ class Ui_SecondForm(object):
         font.setWeight(75)
         self.pushButton_2.setFont(font)
         self.pushButton_2.setObjectName("pushButton_2")
+        
+        # 测温
+        self.pushButton_3 = QtWidgets.QPushButton(Form)
+        self.pushButton_3.setGeometry(QtCore.QRect(840, 760, 212, 51))
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(15)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_3.setFont(font)
+        self.pushButton_3.setObjectName("pushButton_3")
+        
+        # 打印表格
+        self.pushButton_4 = QtWidgets.QPushButton(Form)
+        self.pushButton_4.setGeometry(QtCore.QRect(840, 760, 212, 51))
+        font = QtGui.QFont()
+        font.setFamily("宋体")
+        font.setPointSize(15)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_4.setFont(font)
+        self.pushButton_4.setObjectName("pushButton_4")
+        
+        # 1
         self.label_14 = QtWidgets.QLabel(Form)
         self.label_14.setGeometry(QtCore.QRect(620, 150, 631, 511))
         self.label_14.setAlignment(QtCore.Qt.AlignCenter)
         self.label_14.setObjectName("label_14")
+        
+        # 您的信息如下
         self.label_15 = QtWidgets.QLabel(Form)
         self.label_15.setGeometry(QtCore.QRect(510, 30, 361, 51))
         font = QtGui.QFont()
@@ -437,10 +492,19 @@ class Ui_SecondForm(object):
         # 将信号与槽绑定
         self.pushButton.clicked.connect(self.shut)
         self.pushButton_2.clicked.connect(self.Print)
-
+        self.pushButton_3.clicked.connect(self.GetTemperature)
+        self.pushButton_4.clicked.connect(self.Print_Table)     
+        
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+    
+    def  Print_Table(self):
+        #打印结果表
+        pass
 
+    def GetTemperature(self):
+         # 测温
+        return thermometry()
     # 一些固定文字控件的标题的设定
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -460,7 +524,7 @@ class Ui_SecondForm(object):
         self.label_12.setText(_translate("Form", "辅导员："))
         # self.label_13.setText(_translate("Form", "庞玉印"))
         self.pushButton_2.setText(_translate("Form", "打印信息"))
-        # self.label_14.setText(_translate("Form", "1"))
+        self.label_14.setText(_translate("Form", "1"))
         self.label_15.setText(_translate("Form", "您的信息如下"))
 
     # 关闭窗口，返回原窗口
@@ -503,7 +567,6 @@ if __name__=='__main__':
 
     mainWindows.show()
 
-    # 测温
-    # thermometry()
+   
     sys.exit(app.exec_())
 
