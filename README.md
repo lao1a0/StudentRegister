@@ -13,11 +13,12 @@
 - 数据库录入图片保存地址：/home/pi/Pictures/Face_picture/
 - mysql数据库名：test 数据表名:user
 - 头像 ：/home/pi/Pictures/Face_local/  
-- 地图 ：/home/pi/Pictures/map_local/   
+- 地图 ：/home/pi/Pictures/map_local/  
+- excel表格：/home/pi/Documents
+#### 第三方库安装
 - pip3 install playsound
 - pip3 install baidu-aip
 - playsound报错：
-
 		Traceback (most recent call last):
 		  File "/home/pi/Desktop/1.py", line 3, in <module>
 		    playsound.playsound('/home/pi/Desktop/Jam - 七月上.mp3')
