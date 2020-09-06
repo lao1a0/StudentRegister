@@ -16,6 +16,7 @@
 - 地图 ：/home/pi/Pictures/map_local/  
 - 摄像头拍摄保存照片：/home/pi/Pictures/Face_picture/
 - excel表格：/home/pi/Documents/
+- 人脸库在ydjhlsz这个账号里，语音识别
 #### 第三方库安装
 - pip3 install playsound
 - pip3 install baidu-aip
