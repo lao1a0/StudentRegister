@@ -7,7 +7,7 @@
 - 可检测并识别人脸，查询本地的sql数据库回显用户的个人信息
 - 可以支持打印机，打印出个人信息
 - 红外探测，量体温 **(30-37.2正常)**，语音交互提示测温结果
-- 可导出体温在**35-37.2**的学生的个人信息，并用excel表格显示，并打印表格
+- 可导出体温在**30-37.2**的学生的个人信息，并用excel表格显示，并打印表格
 #### 说明
 - 拍照获得的图片保存地址：/home/pi/Pictures
 - 数据库录入图片保存地址：/home/pi/Pictures/Face_picture/
@@ -17,6 +17,7 @@
 - 摄像头拍摄保存照片：/home/pi/Pictures/Face_picture/
 - excel表格：/home/pi/Documents/
 - 人脸库在ydjhlsz这个账号里，语音识别
+- mysql数据库 root 密码：相识学生报道系统base64
 #### 第三方库安装
 - pip3 install playsound
 - pip3 install baidu-aip
