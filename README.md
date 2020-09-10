@@ -17,7 +17,6 @@
 - 摄像头拍摄保存照片：/home/pi/Pictures/Face_picture/
 - excel表格：/home/pi/Documents/
 - 人脸库在ydjhlsz这个账号里，语音识别
-- mysql数据库 root 密码：相识学生报道系统base64
 #### 第三方库安装
 - pip3 install playsound
 - pip3 install baidu-aip
@@ -39,7 +38,8 @@
 pi  yahboom
 
 #### mysql账号密码：
-root 123
+本地：root 123
+云端：root 相识学生报道系统base64
 APP_TOKEN：AT_8B6A2kdNHmNo7oYcPpsbgeQlK7l06KDm
 UID_wL85bprwzyAigwmf61FnVHWLbP1N
 
