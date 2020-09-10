@@ -40,6 +40,10 @@ pi  yahboom
 #### mysql账号密码：
 本地：root 123
 云端：root 相识学生报道系统base64 55u46K+G5a2m55Sf5oql6YGT57O757uf
+查询库里用户：
+use mysql;
+SELECT DISTINCT CONCAT('User: [', user, '''@''', host, '];') AS USER_HOST FROM user; 
+
 APP_TOKEN：AT_8B6A2kdNHmNo7oYcPpsbgeQlK7l06KDm
 UID_wL85bprwzyAigwmf61FnVHWLbP1N
 
