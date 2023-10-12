@@ -35,7 +35,7 @@
 
 #### 登录账号密码：
 
-pi  yahboom
+
 
 #### mysql账号密码：
 
@@ -43,8 +43,8 @@ pi  yahboom
 use mysql;
 SELECT DISTINCT CONCAT('User: [', user, '''@''', host, '];') AS USER_HOST FROM user; 
 
-APP_TOKEN：AT_8B6A2kdNHmNo7oYcPpsbgeQlK7l06KDm
-UID_wL85bprwzyAigwmf61FnVHWLbP1N
+APP_TOKEN：
+
 
 ## 副项目——聊天机器人
 
